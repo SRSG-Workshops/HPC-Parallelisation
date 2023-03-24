@@ -1,20 +1,20 @@
 #------------------------------------------------------------
-# Values for this workshop.
+# Values for this lesson.
 #------------------------------------------------------------
-# What kind of thing is this ("workshop")? #Don't Change
-kind: "workshop"
-# Is this a permanent page 'static' or a taught workshop 'dated'
+# What kind of thing is this ("lesson")? #Don't change
+kind: "lesson"
+# Is this a permanent page 'static' or a taught lesson 'dated'
 delivery: "static"
 
-# Overall title for the Workshop.
-# This variable is used to (optionally) add a title in the "jumbotron"
-# (the grey box at the top of the page), and to the extra pages.
-title: "Introduction to MPI and OpenMP"
-form_title: "Introduction+to+MPI+and+OpenMP" # This is required for the surveys
+type: "episode"
+
+# Overall title for pages.
+title: "Introduction to the Message Passing Interface"
+form_title: "Introduction+to+the+Message+Passing+Interface" # This is required for the surveys
 
 # Email address, no mailto:
 email: "rsginfo@soton.ac.uk"
-logo_site: "https://rsgsoton.net"
+logo_site: "https://rsgsoton.net/"
 
 # For static delivery this section can all be ignored ==================================================================
 # Specify the location of the workshop
@@ -26,71 +26,36 @@ language: "TBC"        # e.g. en
 latitude: "50.909698"    # latitude of location (Soton: 50.909698)
 longitude: "-1.404351"   # longitude of location (Soton: -1.404351)
 
-# Specify the start and end date of the workshop
+# Specify the start and end date of the lesson
 humandate: "TBC"      # e.g. "6th August"
 humantime: "TBC"      # e.g. "09:00-17:00"
-startdate: "1990-01-01"        # e.g. YYYY-MM-DD # This is required for the surveys NOTE: 1990-1-1 will not work
+startdate: "TBC"        # e.g. YYYY-MM-DD # e.g. YYYY-MM-DD # This is required for the surveys NOTE: 1990-1-1 will not work
 enddate: "TBC"          # e.g. YYYY-MM-DD
+
+# Start time in minutes (0 to be clock-independent, 3:30 pm or 15:30 both okay).
+start-time: 0
 
 # Specify the details of the instructors and helpers
 # Can be list, or single string
 instructor:
-  - "Instructor 1"
+  - "TBC"
 instructor-email:
-  - "instructor1@domain.com"
-helper:
-  - "Helper 1"
+  - "TBC"
 # ======================================================================================================================
 
-# See https://github.com/Southampton-RSG-Training/setup-documents for setup instructions.
-setup_docs:
-  - text_editor.md
-
-# Details about the lessons
-lessons:
-  - title: Introduction to the Message Passing Interface
-    gh-name: dirac-intro-to-mpi
-    type: episode
-    branch: main
-    date: 13 January 2022
-    start-time: 15:00
-    order: 1
-
-  - title: Introduction to OpenMP
-    gh-name: dirac-intro-to-openmp
-    type: episode
-    branch: main
-    date: 14 January 2022
-    start-time: 15:00
-    order: 2
-
 ###
-# It is unlikely you need to modify the values below this line
+# It is unlikely you need to modify the values below this line. Unless you are developing content.
 ###
-
-# Specify that things in the episodes collection should be output.
-collections:
-  episodes:
-    output: true
-    permalink: /:slug
-
-include:
-  - _includes/rsg/
-
-# If there is both an R and python official version of a curriculum
-# (as listed on https://software-carpentry.org/lessons/ and
-# https://datacarpentry.org/lessons/), change the
-# value of the variable below ("flavor") to get the schedule and installation
-# instructions updated accordingly (valid values are 'r' or 'python').
-# Note: this is only for Data Carpentry and SWC at this time.
-flavor: "python"
-
-# If the workshop will be a lesson pilot (for a new official lesson or
-# a lesson in The Carpentries Incubator), set pilot to "true".
-pilot: true
-
-# rsg: Custom Lessons from the Southampton-RSG-Training git-org
+# Which carpentry is this ("rsg")?
+# rsg: Southampton Research Software Group
 carpentry: "rsg"
+# Change this to the canonical gh-name. This should only be updated if ALL the lesson slugs are also updated.
+gh-name: "dirac-intro-to-mpi"
+
+# Life cycle stage of the lesson
+# See this page for more details: https://cdh.carpentries.org/the-lesson-life-cycle.html
+# Possible values: "pre-alpha", "alpha", "beta", "stable"
+life_cycle: "pre-alpha"
 
 # Sites.
 amy_site: "https://amy.carpentries.org/"
@@ -100,7 +65,6 @@ carpentries_site: "https://carpentries.org/"
 dc_site: "https://datacarpentry.org"
 example_repo: "https://github.com/carpentries/lesson-example"
 example_site: "https://carpentries.github.io/lesson-example"
-incubator: "https://github.com/carpentries-incubator/"
 lc_site: "https://librarycarpentry.org/"
 swc_github: "https://github.com/swcarpentry"
 swc_pages: "https://swcarpentry.github.io"
@@ -111,9 +75,19 @@ workshop_repo: "https://github.com/carpentries/workshop-template"
 workshop_site: "https://carpentries.github.io/workshop-template"
 cc_by_human: "https://creativecommons.org/licenses/by/4.0/"
 
-# Start time in minutes (0 to be clock-independent, 540 to show a start at 09:00 am).
-start_time: 0
+# order is critical
+setup_docs:
+  - text_editor.md
 
+# Specify that things in the episodes collection should be output.
+collections:
+  episodes:
+    output: true
+    permalink: /:slug
+
+include:
+  - _includes/rsg/
+  - _includes/
 # Set the default layout for things in the episodes collection.
 defaults:
   - values:
@@ -132,7 +106,6 @@ defaults:
       root: ..
       layout: page
 
-
 # Files and directories that are not to be copied.
 exclude:
   - Makefile
@@ -142,6 +115,7 @@ exclude:
   - vendor/
   - .docker-vendor/
   - submodules/
+
 
 # Turn on built-in syntax highlighting.
 highlighter: rouge

@@ -29,3 +29,11 @@
 	path = submodules/setup-documents
 	url = https://github.com/Southampton-RSG-Training/setup-documents.git
 	branch = main
+[submodule "submodules/dirac-intro-to-mpi"]
+	path = submodules/dirac-intro-to-mpi
+	url = https://github.com/Southampton-RSG-Training/dirac-intro-to-mpi.git
+	branch = main
+[submodule "submodules/dirac-intro-to-openmp"]
+	path = submodules/dirac-intro-to-openmp
+	url = https://github.com/Southampton-RSG-Training/dirac-intro-to-openmp.git
+	branch = main
